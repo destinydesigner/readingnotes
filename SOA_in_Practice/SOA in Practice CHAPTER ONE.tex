@@ -1,0 +1,104 @@
+\documentclass[11pt]{report}
+
+\usepackage{indentfirst}
+
+\begin{document}
+\title{SOA in Practice Reading Notes}
+\author{Fang Guojian}
+\date{December 2014}
+\maketitle
+
+\chapter{}
+\section*{Motivation}
+\begin{quote}
+It is not the strongest of the species that survive, nor the most intelligent, but the ones most responsive to change.
+\end{quote}
+
+Information technology flexibility is paramount.
+
+we need a new approach that accepts heterogeneity and leads to decentralization.
+
+SOA:
+\begin{itemize}
+     \item \textit{Services}, which on the one hand represent self-contained business functionalities that can be part of one or more processes, and on the other hand, can be implemented by any technology on any platform.
+     \item A specific \textit{infrastructure}, called the enterprise service bus (ESB), that allows us to combine these services in an easy and flexible manner.
+     \item \textit{Policies and processes} that deal with the fact that large distributed systems are heterogeneous, under maintenance, and have different owners.
+\end{itemize}
+
+SOA accepts that the only way to maintain flexibility in large distributed systems is to support heterogeneity, decentralization, and fault tolerance.
+
+\section{Characteristics of Large Distributed Systems}
+First, large systems must deal with \textit{legacies}.
+
+By nature, all large systems are also \textit{heterogeneous}.
+
+By nature, large systems are \textit{complex}.
+
+Large distributed systems also have an important additional property: \textit{different owners}. Different teams, departments, divisions, or companies may maintain the systems, and that means different budgets, schedules, views, and interests must be taken into account.
+
+Another key characteristic of large systems is \textit{imperfection}. Perfectionism is just too expensive. Or, as Winston Churchill once said: 
+\begin{quote}
+Perfectionism spells P-A-R-A-L-Y-S-I-S.
+\end{quote}
+
+Similarly, large systems always have a certain amount of \textit{redundancy}.
+
+Finally, for large systems, \textit{bottlenecks are suicide}. That does not mean that they do not exist, but in general, it is a goal to avoid bottlenecks, and to be able to scale. Note that I don't only mean technical bottlenecks. In large systems, bottlenecks also hinder scalability when they are part of a process or the organizational structure.
+
+\section{The Tale of the Magic Bus}
+This section is a tale of ESB.
+
+\section{What We Can Learn from the Tale of the Magic Bus}
+Although the idea of an IT bus is pretty old, recently, there has been a renaissance of this concept. It started with the introduction of the \textit{enterprise application integration bus} (EAI bus), which was later replaced by the \textit{enterprise service bus} (ESB).
+
+Bus represent high interoperability, but this approach has drawbacks.
+
+Connectivity scales to chaos unless structures are imposed.
+
+In order for large systems to scale, more than just interoperability is required. You need structures provided by technical and organizational rules and patterns. High interoperability must be accompanied by a well-defined architecture, structures, and processes. If you realize this too late, you may be out of the market.
+
+\section{History of SOA}
+The important thing is that SOA is a strategy that requires time and effort. You need some experience to understand what SOA really is about, and where and how it helps.
+
+\section{SOA in Five Slides}
+\subsection{Slide 1: SOA}
+It is based on three major technical concepts: services, interoperability through an enterprise service bus, and loose coupling.
+\begin{itemize}
+	\item A \textit{service} is a piece of self-contained business functionality. The functionality might be simple, or complex. Because services concentrate on the business value of an interface, they bridge the business/IT gap.
+	\item An \textit{enterprise service bus} (ESB) is the infrastructure that enables high interoperability between distributed systems for services. It makes it easier to distribute business processes over multiple systems using different platforms and technologies.
+	\item \textit{Loose coupling} is the concept of reducing system dependencies.
+\end{itemize}
+
+\subsection{Slide 2: Policies and Processes}
+Introducing new functionality is no longer a matter of assigning a specific department a specific task. It is now a combination of multiple tasks for different systems. These systems and the involved teams have to collaborate.
+
+As a consequence, you need clearly defined roles, policies, and processes. The processes include, but are not limited to, defining a service lifecycle and implementing model-driven service development. In addition, you have to set up several processes for distributed software development.
+
+\subsection{Slide 3: Web Services}
+Web Services are one possible way of realizing the technical aspects of SOA.
+
+But Web Services themselves introduce some problems. First, the standards are not yet mature enough to guarantee interoperability. Second, Web Services inherently are insufficient to achieve the right amount of loose coupling.
+
+As a consequence, you should not expect that using Web Services will solve all your technical problems.
+
+Also, you should not fall into the trap of getting too Web Services-specific. Web Services will not be the final standard for system integration.
+
+\subsection{Slide 4: SOA in Practice}
+Of course, this also applies to SOA. General business cases and concepts might not work as well as expected when factors such as performance and security come into play.
+
+In addition, the fact that SOA is a strategy for existing systems under maintenance leads to issues of stability and backward compatibility.
+
+And, in IT, each system is different. As a consequence, you will have to build your specific SOA-you can't buy it. To craft it, you'll need time and an incremental and iterative approach.
+
+Note in addition that whether you introduce SOA is not what's important. The important thing is that the IT solution you introduce is appropriate for your context and requirements.
+
+\subsection{Slide 5: SOA Governance and Management Support}
+Probably the most important aspect of SOA is finding the right approach and amount of governance:
+\begin{itemize}
+	\item You need a central team that will determine general aspects of your specific SOA. However, the ultimate goal is decentralization (which is key for large systems), so you'll have to find the right balance between centralization and decentralization.
+	\item You need the right people. Large systems are different from small systems, and you need people who have experience with such systems. When concepts don't scale for practical reasons, inexperienced people will try to fight against those practical reasons instead of understanding that they are inherent properties of large systems. In addition, central service teams often tend to become ivory towers. They must be driven by the requirements of the business teams. In fact, they have to understand themselves as service providers for service infrastructures.
+	\item First things first. Don't start with the management of services. You need management when you have many services. Don't start with an approach that first designs all services or first provides the infrastructure. It all must grow together, and while it's growing, you'll have enough to do with solving the current problems to worry about those that will come later.
+	\item Last but not least, you need support from the CEO and CIO. SOA is a strategy that affects the company as a whole. Get them to support the concept, to make appropriate decisions, and to give enough time and money. Note that having a lot of funding in the short term is not the most important thing. You need money for the long run. Cutting SOA budgets when only half of the homework is complete is a recipe for disaster.
+\end{itemize}
+
+\end{document}
